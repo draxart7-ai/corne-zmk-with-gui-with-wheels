@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import { KeyDialog } from "../key-dialog/key-dialog.component";
 import { LayoutContext } from "../../providers/layout/layout.provider";
+import { Height } from "@mui/icons-material";
 
 export const KeyButton = (props) => {
   const { keyData } = props;
@@ -22,7 +23,6 @@ export const KeyButton = (props) => {
   const buttonStyles = () => {
     return {
       backgroundColor: isOpen ? "red" : "inherit",
-      padding: "5px",
       textTransform: "unset",
     };
   };
@@ -67,7 +67,7 @@ export const KeyButton = (props) => {
   };
   return (
     <>
-      <Button sx={buttonStyles()} variant="outlined" onClick={handleOpenDialog}>
+      <button variant="outlined" onClick={handleOpenDialog}>
         <div style={labelStyles}>
           {label ? (
             <div style={bold}>{label}</div>
@@ -118,7 +118,7 @@ export const KeyButton = (props) => {
             </>
           )}
         </div>
-      </Button>
+      </button>
       <KeyDialog onClose={handleCloseDialog} isOpen={isOpen} />
     </>
   );
