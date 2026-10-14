@@ -52,7 +52,7 @@ export const BottomActions = () => {
 
       // commit the code
       async function commitConfig(config) {
-        const path = "config/corne.keymap";
+        const path = "config/wheels.keymap";
         const sha = await getSHA(path);
 
         const result = await octokit.repos.createOrUpdateFileContents({

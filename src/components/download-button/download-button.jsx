@@ -14,7 +14,7 @@ export const DownloadButton = () => {
     const blob = new Blob(generateBlob(layers), {
       type: "text/plain;charset=utf-8",
     });
-    saveAs(blob, "corne.keymap");
+    saveAs(blob, "wheels.keymap");
   };
 
   return (
