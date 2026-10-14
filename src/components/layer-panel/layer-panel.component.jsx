@@ -21,43 +21,43 @@ export const LayerPanel = (props) => {
   const [label, setLabel] = useState(layer.label);
   const [error, setError] = useState(false);
 
-  // const gridLeft = () => {
-  //   return (
-  //     <div className="grid-left">
-  //       {layer.bindings.map((key, index) => {
-  //         const button = <KeyButton key={key.index} keyData={key} />;
-  //         if (
-  //           index < 5 ||
-  //           (index > 9 && index < 15) ||
-  //           (index > 19 && index < 25) ||
-  //           (index > 29 && index < 33)
-  //         ) {
-  //           return button;
-  //         }
-  //         return null;
-  //       })}
-  //     </div>
-  //   );
-  // };
+  const gridLeft = () => {
+    return (
+      <div className="grid-left">
+        {layer.bindings.map((key, index) => {
+          const button = <KeyButton key={key.index} keyData={key} />;
+          if (
+            index < 5 ||
+            (index > 9 && index < 15) ||
+            (index > 19 && index < 25) ||
+            (index > 29 && index < 33)
+          ) {
+            return button;
+          }
+          return null;
+        })}
+      </div>
+    );
+  };
 
-  // const gridRight = () => {
-  //   return (
-  //     <div className="grid-right">
-  //       {layer.bindings.map((key, index) => {
-  //         const button = <KeyButton key={key.index} keyData={key} />;
-  //         if (
-  //           (index > 4 && index < 10) ||
-  //           (index > 14 && index < 20) ||
-  //           (index > 24 && index < 30) ||
-  //           index > 32
-  //         ) {
-  //           return button;
-  //         }
-  //         return null;
-  //       })}
-  //     </div>
-  //   );
-  // };
+  const gridRight = () => {
+    return (
+      <div className="grid-right">
+        {layer.bindings.map((key, index) => {
+          const button = <KeyButton key={key.index} keyData={key} />;
+          if (
+            (index > 4 && index < 10) ||
+            (index > 14 && index < 20) ||
+            (index > 24 && index < 30) ||
+            index > 32
+          ) {
+            return button;
+          }
+          return null;
+        })}
+      </div>
+    );
+  };
 
   const handleOnChange = (e) => {
     const input = e.target.value;
@@ -89,50 +89,6 @@ export const LayerPanel = (props) => {
     const direction = e.target.value;
     moveLayer({ direction, index });
   };
-
-  const fakeKey = {
-    "index": 0,
-    "label": "K",
-    "tap": {
-      "id": 5218,
-      "key_category_id": 61,
-      "code": "Q",
-      "label": "Q",
-      "description": null,
-      "created_at": "2021-12-28T09:52:59.183Z",
-      "updated_at": "2022-12-16T10:18:30.014Z",
-      "deleted": false,
-      "modifiable": true,
-      "shifted": false,
-      "tap": true,
-      "hold": true,
-      "doubleTap": true,
-      "tapHold": true,
-      "searchLabel": null,
-      "tag": null,
-      "glyph": null,
-      "jsCode": "KeyQ",
-      "url": null,
-      "os": null,
-      "geometry": null,
-      "params": null,
-      "models": null,
-      "priority": null,
-      "macro": true,
-      "shape": null,
-      "comboPickable": true,
-      "comboTrigger": true,
-      "modifiers": []
-    }
-  }
-
-  const x = 20;
-  const buttonArrayLeft = Array.from({ length: x }, (_, index) => {
-    return <KeyButton key={index} keyData={fakeKey} />
-  });
-  const buttonArrayRight = Array.from({ length: x }, (_, index) => {
-    return <KeyButton key={index} keyData={fakeKey} />
-  });
 
   return (
     <div
@@ -204,20 +160,8 @@ export const LayerPanel = (props) => {
           </div>
 
           <div className="full-keyboard">
-            <div className="container">
-              <img src="/keyboard-pcb.png" alt="Logo" />
-              <div className="keyboard">
-                <div className="grid-left">
-                  {buttonArrayLeft}
-
-                </div>
-                <div className="grid-right">
-                  {buttonArrayRight}
-
-                </div>
-
-              </div>
-            </div>
+            {gridLeft()}
+            {gridRight()}
           </div>
         </Box>
       )}
