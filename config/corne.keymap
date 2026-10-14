@@ -11,22 +11,20 @@
 #define PC 0 
 #define Mac 1 
 #define Gaming 2 
-#define Blender 3 
-#define Blender_Util 4 
-#define Numbers 5 
-#define Sym_Left 6 
-#define Sym_Right 7 
-#define Com_Switch 8 
-#define Pc_util 9 
-#define Mac_util 10 
-#define PC_Nav 11 
-#define Mac_Nav 12 
-#define PC_VDesk 13 
-#define Mac_VDesk 14 
-#define PC_App 15 
-#define Mac_App 16 
-#define PC_Tabs 17 
-#define Mac_Tabs 18 
+#define Numbers 3 
+#define Sym_Left 4 
+#define Sym_Right 5 
+#define Com_Switch 6 
+#define Pc_util 7 
+#define Mac_util 8 
+#define PC_Nav 9 
+#define Mac_Nav 10 
+#define PC_VDesk 11 
+#define Mac_VDesk 12 
+#define PC_App 13 
+#define Mac_App 14 
+#define PC_Tabs 15 
+#define Mac_Tabs 16 
     
 / {
     behaviors {
@@ -46,20 +44,20 @@
     PC_layer {
             label = "PC";
             bindings = <
-              &none            &lt PC_VDesk Q   &hm LSHIFT W     &hm LALT E       &hm LCTRL R      &hm LGUI T       &hm RGUI Y       &hm RCTRL U      &hm RALT I       &hm RSHIFT O     &kp P            &none 
+              &none            &lt PC_VDesk Q   &hm LSHIFT W     &hm LALT E       &hm LCTRL R      &kp T            &kp Y            &hm RCTRL U      &hm RALT I       &hm RSHIFT O     &kp P            &none 
               &none            &lt PC_App A     &lt PC_Tabs S    &lt Numbers D    &lt Sym_Right F  &kp G            &kp H            &lt Sym_Left J   &kp K            &kp L            &mo PC_Nav       &none 
               &none            &lt Pc_util Z    &kp X            &kp C            &kp V            &kp B            &kp N            &kp M            &none            &none            &mo Com_Switch   &none 
-                                                &kp ENTER        &kp SPACE        &kp LSHIFT       &none            &none            &hm LG(L) ESC   
+                                                &none            &kp LC(C)        &kp SPACE        &kp LSHIFT       &none            &none            &none            &kp ESC          &none            &none           
             >;
           };
             
 Mac_layer {
             label = "Mac";
             bindings = <
-              &none            &lt Mac_VDesk Q  &hm LSHIFT W     &hm LALT E       &hm LCTRL R      &hm LGUI T       &hm RGUI Y       &hm RCTRL U      &hm RALT I       &hm RSHIFT O     &kp P            &none 
+              &none            &lt Mac_VDesk Q  &hm LSHIFT W     &hm LALT E       &hm LGUI R       &kp T            &kp Y            &hm RGUI U       &hm RALT I       &hm RSHIFT O     &kp P            &none 
               &none            &lt Mac_App A    &lt Mac_Tabs S   &lt Numbers D    &lt Sym_Right F  &kp G            &kp H            &lt Sym_Left J   &kp K            &kp L            &mo Mac_Nav      &none 
               &none            &lt Mac_util Z   &kp X            &kp C            &kp V            &kp B            &kp N            &kp M            &none            &none            &mo Com_Switch   &none 
-                                                &kp ENTER        &kp SPACE        &kp LSHIFT       &none            &none            &hm LC(LG(Q)) ESC
+                                                &kp LC(C)        &kp SPACE        &kp ENTER        &none            &kp LSHIFT       &hm undefined(undefined(undefined(undefined(LC(LG(Q)))))) ESC &none            &none            &none            &none           
             >;
           };
             
@@ -69,27 +67,7 @@ Gaming_layer {
               &none            &kp Q            &kp W            &kp E            &kp R            &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            &none 
               &none            &kp A            &kp S            &kp D            &kp F            &kp G            &kp H            &kp J            &kp K            &kp L            &none            &none 
               &none            &lt Pc_util Z    &kp X            &kp C            &kp V            &kp B            &kp N            &kp M            &none            &none            &mo Com_Switch   &none 
-                                                &none            &kp SPACE        &kp LSHIFT       &none            &kp ENTER        &kp ESC         
-            >;
-          };
-            
-Blender_layer {
-            label = "Blender";
-            bindings = <
-              &none            &kp X            &hm LSHIFT X     &hm LALT Y       &hm LCTRL Z      &kp LS(R)        &none            &none            &none            &none            &none            &none 
-              &none            &kp W            &kp R            &kp S            &kp G            &kp TAB          &none            &none            &none            &none            &none            &none 
-              &none            &mo Blender_Util &kp LC(B)        &kp LC(R)        &kp E            &kp M            &none            &none            &none            &none            &mo Com_Switch   &none 
-                                                &kp ENTER        &kp SPACE        &kp LSHIFT       &none            &none            &none           
-            >;
-          };
-            
-Blender_Util_layer {
-            label = "Blender_Util";
-            bindings = <
-              &none            &none            &none            &kp LC(Z)        &kp LS(LC(Z))    &none            &none            &none            &none            &none            &none            &none 
-              &none            &none            &hm LCTRL LC(S)  &kp LS(S)        &none            &none            &none            &none            &none            &none            &none            &none 
-              &none            &none            &kp L            &kp LC(KP_MINUS) &kp LC(KP_PLUS)  &none            &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &none            &none            &none            &none           
+                                                &none            &kp SPACE        &kp LSHIFT       &none            &kp ENTER        &kp ESC          &none            &none            &none            &none           
             >;
           };
             
@@ -97,9 +75,9 @@ Numbers_layer {
             label = "Numbers";
             bindings = <
               &none            &none            &none            &none            &none            &none            &none            &kp N7           &kp N8           &kp N9           &kp EQUAL        &none 
-              &none            &none            &none            &none            &none            &none            &none            &kp N4           &kp N5           &kp N6           &kp COMMA        &none 
+              &none            &none            &none            &none            &none            &none            &none            &kp KP_N4        &kp N5           &kp N6           &kp COMMA        &none 
               &none            &none            &none            &none            &none            &none            &kp N0           &kp N1           &kp N2           &kp N3           &kp DOT          &none 
-                                                &none            &kp SPACE        &kp LSHIFT       &none            &kp ENTER        &none           
+                                                &none            &kp SPACE        &kp LSHIFT       &none            &kp ENTER        &none            &none            &none            &none            &none           
             >;
           };
             
@@ -109,7 +87,7 @@ Sym_Left_layer {
               &none            &kp QMARK        &kp GRAVE        &kp DQT          &kp SINGLE_QUOTE &kp TILDE        &none            &none            &none            &none            &none            &none 
               &none            &kp EXCL         &kp AT           &kp HASH         &kp DOLLAR       &kp PERCENT      &none            &none            &none            &none            &none            &none 
               &none            &kp BACKSLASH    &kp SLASH        &kp ASTRK        &kp MINUS        &kp PLUS         &none            &none            &none            &none            &none            &none 
-                                                &none            &kp UNDERSCORE   &none            &none            &none            &none           
+                                                &none            &kp UNDERSCORE   &none            &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
@@ -119,7 +97,7 @@ Sym_Right_layer {
               &none            &none            &none            &none            &none            &none            &kp COLON        &kp SEMICOLON    &kp AMPERSAND    &kp PIPE         &kp EQUAL        &none 
               &none            &none            &none            &none            &none            &none            &kp LESS_THAN    &kp LPAR         &kp LBRC         &kp LBKT         &kp COMMA        &none 
               &none            &none            &none            &none            &none            &none            &kp GREATER_THAN &kp RPAR         &kp RBRC         &kp  RBKT        &kp DOT          &none 
-                                                &none            &none            &none            &none            &kp CARET        &none           
+                                                &none            &none            &none            &none            &kp CARET        &none            &none            &none            &none            &none           
             >;
           };
             
@@ -127,9 +105,9 @@ Com_Switch_layer {
             label = "Com_Switch";
             bindings = <
               &none            &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_CLR       &none            &none            &none            &none            &none            &none 
-              &none            &to PC           &to Mac          &to Gaming       &to Blender      &none            &none            &none            &none            &none            &none            &none 
+              &none            &to PC           &to Mac          &to Gaming       &none            &none            &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &none            &none            &none            &none           
+                                                &none            &none            &none            &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
@@ -139,17 +117,17 @@ Pc_util_layer {
               &none            &none            &kp LS(LG(S))    &kp LC(Z)        &kp LC(Y)        &kp LC(SLASH)    &none            &none            &none            &none            &none            &none 
               &none            &none            &kp LC(S)        &kp BACKSPACE    &kp DEL          &kp TAB          &none            &none            &none            &none            &none            &none 
               &none            &none            &kp LC(X)        &kp LC(C)        &kp LC(V)        &kp LC(A)        &none            &none            &none            &none            &none            &none 
-                                                &none            &kp LALT         &kp LSHIFT       &none            &none            &none           
+                                                &none            &kp LALT         &kp LSHIFT       &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
 Mac_util_layer {
             label = "Mac_util";
             bindings = <
-              &none            &none            &kp LG(LS(N4))   &kp LG(Z)        &kp LG(Y)        &kp LG(SLASH)    &none            &none            &none            &none            &none            &none 
+              &none            &none            &kp LS(LG(KP_N4)) &kp LG(Z)        &kp LG(Y)        &kp LG(SLASH)    &none            &none            &none            &none            &none            &none 
               &none            &none            &kp LG(S)        &kp BACKSPACE    &kp DEL          &kp TAB          &none            &none            &none            &none            &none            &none 
               &none            &none            &kp LG(X)        &kp LG(C)        &kp LG(V)        &kp LG(A)        &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &kp LSHIFT       &none            &none            &none           
+                                                &none            &none            &kp LSHIFT       &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
@@ -159,7 +137,7 @@ PC_Nav_layer {
               &none            &none            &kp HOME         &kp UP           &kp END          &none            &none            &none            &none            &none            &none            &none 
               &none            &kp LC(LS(LEFT)) &kp LEFT         &kp DOWN         &kp RIGHT        &kp LC(LS(RIGHT)) &none            &kp LCTRL        &kp LALT         &kp LSHIFT       &none            &none 
               &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &none            &none            &none            &none           
+                                                &none            &none            &none            &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
@@ -169,7 +147,7 @@ Mac_Nav_layer {
               &none            &none            &kp HOME         &kp UP           &kp END          &none            &none            &none            &none            &none            &none            &none 
               &none            &kp LS(LA(LEFT)) &kp LEFT         &kp DOWN         &kp RIGHT        &kp LS(LA(RIGHT)) &none            &kp LGUI         &kp LALT         &kp LSHIFT       &none            &none 
               &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &none            &none            &none            &none           
+                                                &none            &none            &none            &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
@@ -179,7 +157,7 @@ PC_VDesk_layer {
               &none            &none            &kp LCTRL        &kp LG(LEFT)     &kp LG(RIGHT)    &kp LG(TAB)      &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &kp LC(LG(F4))   &kp LC(LG(D))    &none            &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &none            &none            &none            &none           
+                                                &none            &none            &none            &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
@@ -189,7 +167,7 @@ Mac_VDesk_layer {
               &none            &none            &kp LCTRL        &kp LEFT         &kp RIGHT        &kp LC(UP)       &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &none            &none            &none            &none           
+                                                &none            &none            &none            &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
@@ -199,7 +177,7 @@ PC_App_layer {
               &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none            &none 
               &none            &none            &kp LALT         &kp LS(TAB)      &kp TAB          &none            &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &kp LA(F4)       &none            &none            &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &none            &none            &none            &none           
+                                                &none            &none            &none            &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
@@ -209,7 +187,7 @@ Mac_App_layer {
               &none            &none            &none            &kp TILDE        &kp GRAVE        &kp W            &none            &none            &none            &none            &none            &none 
               &none            &none            &kp LGUI         &kp LS(TAB)      &kp TAB          &none            &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &kp Q            &kp SPACE        &none            &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &none            &none            &none            &none           
+                                                &none            &none            &none            &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
@@ -219,7 +197,7 @@ PC_Tabs_layer {
               &none            &none            &none            &kp LC(LS(PAGE_UP)) &kp LC(LS(PAGE_DOWN)) &none            &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN) &kp LS(LC(T))    &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &kp LC(W)        &kp LC(T)        &none            &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &none            &none            &none            &none           
+                                                &none            &none            &none            &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
@@ -229,7 +207,7 @@ Mac_Tabs_layer {
               &none            &none            &none            &kp LS(LC(PAGE_UP)) &kp LS(LC(PAGE_DOWN)) &none            &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &kp LA(LG(LEFT)) &kp LA(LG(RIGHT)) &kp LS(LG(T))    &none            &none            &none            &none            &none            &none 
               &none            &none            &none            &kp LG(W)        &kp LG(T)        &none            &none            &none            &none            &none            &none            &none 
-                                                &none            &none            &none            &none            &none            &none           
+                                                &none            &none            &none            &none            &none            &none            &none            &none            &none            &none           
             >;
           };
             
