@@ -30,7 +30,7 @@ export const LayerPanel = (props) => {
             index < 5 ||
             (index > 9 && index < 15) ||
             (index > 19 && index < 25) ||
-            (index > 29 && index < 33)
+            (index > 29 && index < 35)
           ) {
             return button;
           }
@@ -49,7 +49,7 @@ export const LayerPanel = (props) => {
             (index > 4 && index < 10) ||
             (index > 14 && index < 20) ||
             (index > 24 && index < 30) ||
-            index > 32
+            (index > 34 && index < 40)
           ) {
             return button;
           }

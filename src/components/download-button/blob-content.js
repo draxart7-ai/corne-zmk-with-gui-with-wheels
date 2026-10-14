@@ -28,18 +28,24 @@ export const generateBlob = (layers) => {
           bindingsConfig.push(`     &none            ${tapBindingCode}`);
         } else if (binding.index === 9 || binding.index === 19) {
           bindingsConfig.push(
-            ` ${tapBindingCode} &none \n              &none           `
+            ` ${tapBindingCode} &none \n              &none           `,
           );
         } else if (binding.index === 29) {
           bindingsConfig.push(
-            ` ${tapBindingCode} &none \n                                               `
+            ` ${tapBindingCode} &none \n              &none           `,
           );
+        } else if (binding.index === 39) {
+          bindingsConfig.push(` ${tapBindingCode} &none `);
         } else {
           bindingsConfig.push(` ${tapBindingCode}`);
         }
       });
       layerConfigs.push(`${layer.label}_layer {
             label = "${layer.label}";
+            sensor-bindings = < 
+              &inc_dec_kp C_VOL_UP C_VOL_DN // 1st: Targets left_encoder01
+              &inc_dec_kp C_VOL_UP C_VOL_DN // 2nd: Targets left_encoder02
+              >;
             bindings = <
          ${bindingsConfig.join("")}
             >;

@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 import { Base64 } from "js-base64";
 import { Octokit } from "@octokit/rest";
 import { generateBlob } from "../download-button/blob-content";
+import { DownloadButton } from "../download-button/download-button";
 
 const owner = process.env.REACT_APP_GITHUB_OWNER;
 const repo = process.env.REACT_APP_GITHUB_REPO;
@@ -71,7 +72,7 @@ export const BottomActions = () => {
       await commitConfig(config);
       setProgressMessage("commit success");
       setProgress(10);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const downloadArtifact = async () => {
@@ -173,7 +174,7 @@ export const BottomActions = () => {
           clearInterval(intervalID);
         }
       }
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const getRuns = async () => {
@@ -225,6 +226,7 @@ export const BottomActions = () => {
             <Button onClick={superAction} startIcon={<DownloadIcon />}>
               Create Firmware
             </Button>
+            <DownloadButton />
           </>
         )}
       </div>
