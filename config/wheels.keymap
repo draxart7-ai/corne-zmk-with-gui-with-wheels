@@ -28,8 +28,8 @@
     PC_layer {
             label = "PC";
             sensor-bindings = < 
-              &inc_dec_kp C_VOL_UP C_VOL_DN 
-              &inc_dec_kp PG_UP PG_DN  
+              &inc_dec_kp C_VOL_UP C_VOL_DN // left_encoder01 
+              &inc_dec_kp PG_UP PG_DN       // left_encoder02
               >;
             bindings = <
               &none            &kp Q            &kp W            &kp E            &kp R            &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            &none 
