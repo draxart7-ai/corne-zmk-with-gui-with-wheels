@@ -1,15 +1,15 @@
 
 /*
-* Copyright (c) 2020 The ZMK Contributors 
-* SPDX-License-Identifier: MIT 
-*/ 
+* Copyright (c) 2020 The ZMK Contributors
+* SPDX-License-Identifier: MIT
+*/
 
-#include <behaviors.dtsi> 
-#include <dt-bindings/zmk/keys.h> 
-#include <dt-bindings/zmk/bt.h> 
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
-#define PC 0 
-    
+#define PC 0
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -22,23 +22,31 @@
             bindings = <&kp>, <&kp>;
         };
     };
-    keymap {
-    compatible = "zmk,keymap";
 
-    PC_layer {
+    keymap {
+        compatible = "zmk,keymap";
+
+        PC_layer {
             label = "PC";
+
             sensor-bindings = < 
               &inc_dec_kp C_VOL_UP C_VOL_DN  // left_horizonal_encoder  
               &inc_dec_kp C_VOL_DN C_VOL_UP // left_vertical_encoder
               >;
+
             bindings = <
-              &none            &kp Q            &kp W            &kp E            &kp R            &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            &none 
-              &none            &kp A            &kp S            &kp D            &kp F            &kp G            &kp H            &kp J            &kp K            &kp L            &kp A            &none 
-              &none            &kp Z            &kp X            &kp C            &kp V            &kp B            &kp N            &kp M            &kp B            &kp C            &kp D            &none 
-              &none            &kp A            &kp B            &kp C            &kp D            &kp E            &kp A            &kp B            &kp C            &kp D            &kp E            &none          
+                &kp Q  &kp W  &kp E  &kp R  &kp T
+                &kp Y  &kp U  &kp I  &kp O  &kp P
+
+                &kp A  &kp S  &kp D  &kp F  &kp G
+                &kp H  &kp J  &kp K  &kp L  &kp A
+
+                &kp Z  &kp X  &kp C  &kp V  &kp B
+                &kp N  &kp M  &kp B  &kp C  &kp D
+
+                &kp A  &kp B  &kp C  &kp D  &kp E
+                &kp A  &kp B  &kp C  &kp D  &kp E
             >;
-          };
-            
+        };
     };
 };
-    
