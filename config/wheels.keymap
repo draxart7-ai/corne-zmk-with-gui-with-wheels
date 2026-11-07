@@ -29,7 +29,7 @@
             label = "PC";
             sensor-bindings = < 
               &inc_dec_kp C_VOL_UP C_VOL_DN  // left_horizonal_encoder  
-              &inc_dec_kp C_VOL_UP C_VOL_DN  // left_vertical_encoder
+              &inc_dec_kp C_VOL_DN C_VOL_UP // left_vertical_encoder
               >;
             bindings = <
                &kp Q            &kp W            &kp E            &kp R            &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            
