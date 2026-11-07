@@ -32,10 +32,10 @@
               &inc_dec_kp C_VOL_DN C_VOL_UP // left_vertical_encoder
               >;
             bindings = <
-               &kp Q            &kp W            &kp E            &kp R            &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            
-               &kp A            &kp S            &kp D            &kp F            &kp G            &kp H            &kp J            &kp K            &kp L            &kp A            
-               &kp Z            &kp X            &kp C            &kp V            &kp B            &kp N            &kp M            &kp B            &kp C            &kp D            
-               &kp A            &kp B            &kp C            &kp D            &kp E            &kp A            &kp B            &kp C            &kp D            &kp E            
+              &none            &kp Q            &kp W            &kp E            &kp R            &kp T            &kp Y            &kp U            &kp I            &kp O            &kp P            &none 
+              &none            &kp A            &kp S            &kp D            &kp F            &kp G            &kp H            &kp J            &kp K            &kp L            &kp A            &none 
+              &none            &kp Z            &kp X            &kp C            &kp V            &kp B            &kp N            &kp M            &kp B            &kp C            &kp D            &none 
+              &none            &kp A            &kp B            &kp C            &kp D            &kp E            &kp A            &kp B            &kp C            &kp D            &kp E            &none          
             >;
           };
             
