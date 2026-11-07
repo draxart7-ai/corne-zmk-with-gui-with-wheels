@@ -17,11 +17,11 @@
         ;
 };
 
-&left_encoder01 {
+&left_horizonal_encoder {
     status = "okay";
 };
 
-&left_encoder02 {
+&left_vertical_encoder {
     status = "okay";
 };
 

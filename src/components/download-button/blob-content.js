@@ -43,8 +43,8 @@ export const generateBlob = (layers) => {
       layerConfigs.push(`${layer.label}_layer {
             label = "${layer.label}";
             sensor-bindings = < 
-              &inc_dec_kp C_VOL_UP C_VOL_DN // 1st: Targets left_encoder01
-              &inc_dec_kp C_VOL_UP C_VOL_DN // 2nd: Targets left_encoder02
+              &inc_dec_kp C_VOL_UP C_VOL_DN // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp C_VOL_UP C_VOL_DN // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
          ${bindingsConfig.join("")}
