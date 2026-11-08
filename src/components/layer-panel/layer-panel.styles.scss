@@ -1,6 +1,7 @@
 .layer-panel {
   display: flex;
-  justify-content: center;
+  max-width: 1200px;
+
 
   .layer-actions {
     display: grid;
@@ -67,10 +68,11 @@
       /* Forces each cell to remain a perfect square as the column width changes */
       aspect-ratio: 1 / 1;
       width: 100%;
-
-      /* Styling for visualization */
-      background-color: #3498db;
+      background-color: #cad3d6;
       border-radius: 4px;
+      color: #BFBFBF;
+      display: flex;
+      justify-content: center;
     }
 
     .wheel {
@@ -78,7 +80,7 @@
     }
 
     .empty {
-      background-color: grey;
+      background-color: transparent;
     }
 
 

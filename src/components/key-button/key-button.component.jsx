@@ -24,6 +24,7 @@ export const KeyButton = (props) => {
       backgroundColor: isOpen ? "red" : "inherit",
       padding: "5px",
       textTransform: "unset",
+      width: "100%",
     };
   };
 

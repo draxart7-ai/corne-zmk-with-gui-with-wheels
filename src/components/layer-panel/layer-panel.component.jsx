@@ -67,12 +67,17 @@ export const LayerPanel = (props) => {
     );
   };
 
-  const keys = layer.bindings.map((key, index) => {
-    const button = <div className={`grid-item item-${index + 1}`} key={key.index} keyData={key}>
-      {key.index}
-    </div>;
-    return button;
-  })
+
+  const keys = () => {
+    return (
+      layer.bindings.map((key, index) => {
+        const button = <div className={`grid-item item-${index + 1}`} key={key.index} >
+          <KeyButton key={key.index} keyData={key} />
+        </div>
+        return button;
+      })
+    );
+  };
 
   const emptySpaces = () => {
     let array = [];
@@ -191,7 +196,7 @@ export const LayerPanel = (props) => {
             </div>
           </div>
           <div className="grid-container">
-            {keys}
+            {keys()}
             {wheels()}
             {emptySpaces()}
           </div>
