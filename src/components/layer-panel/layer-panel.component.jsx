@@ -36,6 +36,14 @@ export const LayerPanel = (props) => {
           }
           return null;
         })}
+        <div className="horizontal-wheel">
+          <button className="left-action">left</button>
+          <button className="right-action">right</button>
+        </div>
+        <div className="vertical-wheel">
+          <button className="up-action">up</button>
+          <button className="down-action">down</button>
+        </div>
       </div>
     );
   };
@@ -58,6 +66,30 @@ export const LayerPanel = (props) => {
       </div>
     );
   };
+
+  const keys = layer.bindings.map((key, index) => {
+    const button = <div className={`grid-item item-${index + 1}`} key={key.index} keyData={key}>
+      {key.index}
+    </div>;
+    return button;
+  })
+
+  const emptySpaces = () => {
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+      console.log(`empty-item-${i + 1}`);
+      array.push(<div className={`grid-item empty empty-item-${i + 1}`} key={`empty-${i}`}></div>);
+    }
+    return array;
+  }
+
+  const wheels = () => {
+    let array = [];
+    for (let i = 0; i < 2; i++) {
+      array.push(<div className={`grid-item wheel wheel-item-${i + 1}`} key={`empty-${i}`}></div>);
+    }
+    return array;
+  }
 
   const handleOnChange = (e) => {
     const input = e.target.value;
@@ -100,7 +132,7 @@ export const LayerPanel = (props) => {
       {...other}
     >
       {selectedLayerIndex === index && (
-        <Box sx={{ p: 3 }}>
+        <Box width="100%" sx={{ p: 3 }}>
           <div className="layer-actions">
             <div className="move-buttons">
               <IconButton
@@ -158,14 +190,20 @@ export const LayerPanel = (props) => {
               <DeleteLayerButton />
             </div>
           </div>
-
-          <div className="full-keyboard">
-            {gridLeft()}
-            {gridRight()}
+          <div className="grid-container">
+            {keys}
+            {wheels()}
+            {emptySpaces()}
           </div>
+          {/* <div className="full-keyboard"> */}
+
+          {/* {gridLeft()}
+            {gridRight()} */}
+          {/* </div> */}
         </Box>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 };
 

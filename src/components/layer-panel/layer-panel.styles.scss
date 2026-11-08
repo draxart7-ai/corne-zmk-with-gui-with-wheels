@@ -49,34 +49,258 @@
     }
   }
 
-  .full-keyboard {
-    display: flex;
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
 
-    >div {
-      padding: 10px;
-      margin: 4px;
-      border: 2px solid darkgray;
-      border-radius: 10px;
+    /* Visual map of the grid. The '.' in row 2, column 4 is forced empty */
+    grid-template-areas:
+      "a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11 a12 a13"
+      "b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 b11 b12 b13"
+      "c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 c11 c12 c13"
+      "d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 d11 d12 d13"
+    ;
+
+    .grid-item {
+      /* Forces each cell to remain a perfect square as the column width changes */
+      aspect-ratio: 1 / 1;
+      width: 100%;
+
+      /* Styling for visualization */
+      background-color: #3498db;
+      border-radius: 4px;
     }
 
-    .grid-left {
-      display: grid;
-      background-color: rgb(202, 222, 228);
-      grid-template-columns: repeat(5, 90px);
-      grid-template-rows: repeat(4, 90px);
-      gap: 6px;
-
-      button:nth-last-child(3):nth-child(5n + 1) {
-        grid-column-start: 3;
-      }
+    .wheel {
+      background-color: #e74c3c;
     }
 
-    .grid-right {
-      display: grid;
-      background-color: rgb(246, 210, 210);
-      grid-template-columns: repeat(5, 90px);
-      grid-template-rows: repeat(4, 90px);
-      gap: 6px;
+    .empty {
+      background-color: grey;
     }
+
+
+
+
+
+
+    .item-1 {
+      grid-area: a1;
+    }
+
+    .item-2 {
+      grid-area: a2;
+    }
+
+    .item-3 {
+      grid-area: a3;
+    }
+
+    .item-4 {
+      grid-area: a4;
+    }
+
+    .item-5 {
+      grid-area: a5;
+    }
+
+    .empty-item-1 {
+      grid-area: a6;
+    }
+
+    .empty-item-2 {
+      grid-area: a7;
+    }
+
+    .empty-item-3 {
+      grid-area: a8;
+    }
+
+    .item-6 {
+      grid-area: a9;
+    }
+
+    .item-7 {
+      grid-area: a10;
+    }
+
+    .item-8 {
+      grid-area: a11;
+    }
+
+    .item-9 {
+      grid-area: a12;
+    }
+
+    .item-10 {
+      grid-area: a13;
+    }
+
+    .item-11 {
+      grid-area: b1;
+    }
+
+    .item-12 {
+      grid-area: b2;
+    }
+
+    .item-13 {
+      grid-area: b3;
+    }
+
+    .item-14 {
+      grid-area: b4;
+    }
+
+    .item-15 {
+      grid-area: b5;
+    }
+
+    .wheel-item-1 {
+      grid-area: b6;
+    }
+
+    .empty-item-4 {
+      grid-area: b7;
+    }
+
+    .empty-item-5 {
+      grid-area: b8;
+    }
+
+    .item-16 {
+      grid-area: b9;
+    }
+
+    .item-17 {
+      grid-area: b10;
+    }
+
+    .item-18 {
+      grid-area: b11;
+    }
+
+    .item-19 {
+      grid-area: b12;
+    }
+
+    .item-20 {
+      grid-area: b13;
+    }
+
+    .item-21 {
+      grid-area: c1;
+    }
+
+    .item-22 {
+      grid-area: c2;
+    }
+
+    .item-23 {
+      grid-area: c3;
+    }
+
+    .item-24 {
+      grid-area: c4;
+    }
+
+    .item-25 {
+      grid-area: c5;
+    }
+
+    .item-35 {
+      // thumb button
+      grid-area: c6;
+      background-color: pink;
+    }
+
+    .empty-item-6 {
+      grid-area: c7;
+    }
+
+    .item-36 {
+      // thumb button
+      grid-area: c8;
+      background-color: pink;
+    }
+
+
+    .item-26 {
+      grid-area: c9;
+    }
+
+    .item-27 {
+      grid-area: c10;
+    }
+
+    .item-28 {
+      grid-area: c11;
+    }
+
+    .item-29 {
+      grid-area: c12;
+    }
+
+    .item-30 {
+      grid-area: c13;
+    }
+
+    .item-31 {
+      grid-area: d1;
+    }
+
+    .empty-item-7 {
+      grid-area: d2;
+    }
+
+    .wheel-item-2 {
+      grid-area: d3;
+    }
+
+    .item-32 {
+      grid-area: d4;
+    }
+
+    .item-33 {
+      grid-area: d5;
+    }
+
+    .item-34 {
+      grid-area: d6;
+    }
+
+    .empty-item-8 {
+      grid-area: d7;
+    }
+
+    .item-37 {
+      grid-area: d8;
+    }
+
+    .item-38 {
+      grid-area: d9;
+    }
+
+    .item-39 {
+      grid-area: d10;
+    }
+
+    .empty-item-9 {
+      grid-area: d11;
+    }
+
+    .empty-item-10 {
+      grid-area: d12;
+    }
+
+    .item-40 {
+      grid-area: d13;
+    }
+
+
+
   }
+
 }
