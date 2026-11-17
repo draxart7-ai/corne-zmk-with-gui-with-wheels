@@ -74,6 +74,8 @@ export const KeyDialogPage1CurrentBindingSettings = (props) => {
     setLocalLabel(input);
   };
 
+  const isMouseWheel = index > 39
+
   return (
     <>
       <DialogTitle>
@@ -121,19 +123,20 @@ export const KeyDialogPage1CurrentBindingSettings = (props) => {
             Clear
           </Button>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <DialogContentText>When</DialogContentText>{" "}
-          <Button onClick={() => handleSelectBindingKey(HELD)}>Held</Button>
-          <DialogContentText>:</DialogContentText> {held.label}
-          <Button onClick={() => handleClearBindingTypeValue(HELD)}>
-            Clear
-          </Button>
-        </div>
+        {!isMouseWheel &&
+          (<div
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <DialogContentText>When</DialogContentText>{" "}
+            <Button onClick={() => handleSelectBindingKey(HELD)}>Held</Button>
+            <DialogContentText>:</DialogContentText> {held.label}
+            <Button onClick={() => handleClearBindingTypeValue(HELD)}>
+              Clear
+            </Button>
+          </div>)}
       </DialogContent>
     </>
   );

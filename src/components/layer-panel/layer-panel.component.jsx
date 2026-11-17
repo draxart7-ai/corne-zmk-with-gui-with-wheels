@@ -22,59 +22,61 @@ export const LayerPanel = (props) => {
   const [label, setLabel] = useState(layer.label);
   const [error, setError] = useState(false);
 
-  const gridLeft = () => {
-    return (
-      <div className="grid-left">
-        {layer.bindings.map((key, index) => {
-          const button = <KeyButton key={key.index} keyData={key} />;
-          if (
-            index < 5 ||
-            (index > 9 && index < 15) ||
-            (index > 19 && index < 25) ||
-            (index > 29 && index < 35)
-          ) {
-            return button;
-          }
-          return null;
-        })}
-        <div className="horizontal-wheel">
-          <button className="left-action">left</button>
-          <button className="right-action">right</button>
-        </div>
-        <div className="vertical-wheel">
-          <button className="up-action">up</button>
-          <button className="down-action">down</button>
-        </div>
-      </div>
-    );
-  };
+  // const gridLeft = () => {
+  //   return (
+  //     <div className="grid-left">
+  //       {layer.bindings.map((key, index) => {
+  //         const button = <KeyButton key={key.index} keyData={key} />;
+  //         if (
+  //           index < 5 ||
+  //           (index > 9 && index < 15) ||
+  //           (index > 19 && index < 25) ||
+  //           (index > 29 && index < 35)
+  //         ) {
+  //           return button;
+  //         }
+  //         return null;
+  //       })}
+  //       <div className="horizontal-wheel">
+  //         <button className="left-action">left</button>
+  //         <button className="right-action">right</button>
+  //       </div>
+  //       <div className="vertical-wheel">
+  //         <button className="up-action">up</button>
+  //         <button className="down-action">down</button>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
-  const gridRight = () => {
-    return (
-      <div className="grid-right">
-        {layer.bindings.map((key, index) => {
-          const button = <KeyButton key={key.index} keyData={key} />;
-          if (
-            (index > 4 && index < 10) ||
-            (index > 14 && index < 20) ||
-            (index > 24 && index < 30) ||
-            (index > 34 && index < 40)
-          ) {
-            return button;
-          }
-          return null;
-        })}
-      </div>
-    );
-  };
+  // const gridRight = () => {
+  //   return (
+  //     <div className="grid-right">
+  //       {layer.bindings.map((key, index) => {
+  //         const button = <KeyButton key={key.index} keyData={key} />;
+  //         if (
+  //           (index > 4 && index < 10) ||
+  //           (index > 14 && index < 20) ||
+  //           (index > 24 && index < 30) ||
+  //           (index > 34 && index < 40)
+  //         ) {
+  //           return button;
+  //         }
+  //         return null;
+  //       })}
+  //     </div>
+  //   );
+  // };
 
 
   const keys = () => {
     return (
       layer.bindings.map((key, index) => {
-        const button = <div className={`grid-item item-${index + 1}`} key={key.index} >
-          <KeyButton key={key.index} keyData={key} />
-        </div>
+        const button = (
+          <div className={`grid-item item-${index + 1}`} key={key.index} >
+            <KeyButton key={key.index} keyData={key} />
+          </div>)
+
         return button;
       })
     );
@@ -89,28 +91,28 @@ export const LayerPanel = (props) => {
     return array;
   }
 
-  const wheels = () => {
-    return (
-      Object.keys(layer.sensorBindings).map((wheel, index) => {
-        console.log({ wheel, test: layer.sensorBindings[wheel] });
-        const button = <div className={`grid-item wheel wheel-item-${index + 1}`} key={wheel} >
-          <WheelButton keyData={layer.sensorBindings[wheel]} />
-        </div>
-        return button;
-      })
-    )
-    // let array = [];
-    // console.log({ layer, wheels: layer.sensorBindings });
-    // // layer.sensorBindings.map((wheel, index) => {
-    // //   console.log(`wheel-item-${index + 1}`);
-    // // })
+  // const wheels = () => {
+  //   return (
+  //     Object.keys(layer.sensorBindings).map((wheel, index) => {
+  //       console.log({ wheel, test: layer.sensorBindings[wheel] });
+  //       const button = <div className={`grid-item wheel wheel-item-${index + 1}`} key={wheel} >
+  //         <WheelButton keyData={layer.sensorBindings[wheel]} />
+  //       </div>
+  //       return button;
+  //     })
+  //   )
+  // let array = [];
+  // console.log({ layer, wheels: layer.sensorBindings });
+  // // layer.sensorBindings.map((wheel, index) => {
+  // //   console.log(`wheel-item-${index + 1}`);
+  // // })
 
 
-    // for (let i = 0; i < 2; i++) {
-    //   array.push(<div className={`grid-item wheel wheel-item-${i + 1}`} key={`empty-${i}`}></div>);
-    // }
-    // return array;
-  }
+  // for (let i = 0; i < 2; i++) {
+  //   array.push(<div className={`grid-item wheel wheel-item-${i + 1}`} key={`empty-${i}`}></div>);
+  // }
+  // return array;
+  // }
 
   const handleOnChange = (e) => {
     const input = e.target.value;
@@ -213,7 +215,6 @@ export const LayerPanel = (props) => {
           </div>
           <div className="grid-container">
             {keys()}
-            {wheels()}
             {emptySpaces()}
           </div>
           {/* <div className="full-keyboard"> */}

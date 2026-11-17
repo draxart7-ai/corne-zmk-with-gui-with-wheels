@@ -2,12 +2,17 @@ import React, { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import { KeyDialog } from "../key-dialog/key-dialog.component";
 import { LayoutContext } from "../../providers/layout/layout.provider";
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
 
 export const KeyButton = (props) => {
   const { keyData } = props;
   const { index, tap, held, label } = keyData;
   const [isOpen, setIsOpen] = useState(false);
-  const { setSelectedBindingIndex } = useContext(LayoutContext);
+  const { setSelectedBindingIndex, selectedBindingIndex } = useContext(LayoutContext);
 
   const handleOpenDialog = () => {
     setSelectedBindingIndex(index);
@@ -31,6 +36,7 @@ export const KeyButton = (props) => {
   const labelStyles = {
     display: "flex",
     flexDirection: "column",
+    width: "100%"
   };
 
   const noneStyles = {
@@ -57,6 +63,7 @@ export const KeyButton = (props) => {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
   };
 
   const modStyles = {
@@ -65,27 +72,63 @@ export const KeyButton = (props) => {
     borderRadius: "8px",
     padding: "0px 2px",
     marginLeft: "3px",
+
   };
+
+  const labelsWithArrowsStyles = {
+    display: "flex",
+    alignItems: "center",
+
+  };
+
+  const isMouseWheel = index > 39
+  const isUpAction = index == 40
+  const isDownAction = index == 41
+  const isLeftAction = index == 42
+  const isRightAction = index == 43
+  console.log({ selectedBindingIndex, index })
   return (
     <>
       <Button sx={buttonStyles()} variant="outlined" onClick={handleOpenDialog}>
         <div style={labelStyles}>
           {label ? (
-            <div style={bold}>{label}</div>
+            <div style={labelsWithArrowsStyles}>
+              {isLeftAction && <ArrowLeftIcon />}
+              {isRightAction && <ArrowRightIcon />}
+              {isUpAction && <ArrowDropUpIcon />}
+              {isDownAction && <ArrowDropDownIcon />}
+              <div style={bold}>
+                {label}
+              </div>
+            </div>
           ) : (
             <>
               {tap.label && (
                 <div style={buttonModes}>
-                  <div style={small}>Tap:</div>
-                  <div style={bold}>
+                  {!isMouseWheel && <div style={small}>Tap:</div>}
+                  <div style={labelsWithArrowsStyles}>
+                    {isLeftAction && <ArrowLeftIcon />}
+                    {isRightAction && <ArrowRightIcon />}
+                    {isUpAction && <ArrowDropUpIcon />}
+                    {isDownAction && <ArrowDropDownIcon />}
                     <div style={labelWithMods}>
-                      {tap.label}
+                      <div style={bold}>
+
+                        {tap.label}
+                      </div>
+
                       {tap?.modifiers?.length > 0 && (
                         <div style={modStyles}>{"mods"}</div>
                       )}
                     </div>
                     {tap?.layer?.label && (
-                      <div style={small}>{tap.layer.label}</div>
+                      <div style={small}>
+                        {isRightAction && <ArrowRightIcon />}
+                        {isLeftAction && <ArrowLeftIcon />}
+                        {isUpAction && <ArrowDropUpIcon />}
+                        {isDownAction && <ArrowDropDownIcon />}
+                        {tap.layer.label}
+                      </div>
                     )}
                   </div>
                 </div>

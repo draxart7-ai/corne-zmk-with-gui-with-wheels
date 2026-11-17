@@ -85,9 +85,6 @@
 
 
 
-
-
-
     .item-1 {
       grid-area: a1;
     }
@@ -160,8 +157,20 @@
       grid-area: b5;
     }
 
-    .wheel-item-1 {
+    // wheel button
+    .item-41 {
       grid-area: b6;
+      background-color: rgb(243, 203, 203);
+      height: 45%;
+    }
+
+    // wheel button
+    .item-42 {
+      grid-area: b6;
+      background-color: rgb(243, 203, 203);
+      height: 45%;
+      position: relative;
+      top: 50%
     }
 
     .empty-item-4 {
@@ -215,7 +224,6 @@
     .item-35 {
       // thumb button
       grid-area: c6;
-      background-color: pink;
     }
 
     .empty-item-6 {
@@ -225,7 +233,6 @@
     .item-36 {
       // thumb button
       grid-area: c8;
-      background-color: pink;
     }
 
 
@@ -257,8 +264,22 @@
       grid-area: d2;
     }
 
-    .wheel-item-2 {
+    // wheel button
+    .item-43 {
       grid-area: d3;
+      background-color: lightblue;
+      display: flex;
+      height: 45%;
+    }
+
+    // wheel button
+    .item-44 {
+      display: flex;
+      grid-area: d3;
+      background-color: lightblue;
+      height: 45%;
+      position: relative;
+      top: 50%
     }
 
     .item-32 {

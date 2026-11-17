@@ -17,6 +17,7 @@ export const generateBlob = (layers) => {
 
     layers.forEach((layer) => {
       const bindingsConfig = [];
+      const sensorBingindsConfig = [];
       defineLayers.push(`#define ${layer.label} ${layer.index} `);
       layer.bindings.forEach((binding) => {
         let tapBindingCode = undefined;
@@ -25,17 +26,19 @@ export const generateBlob = (layers) => {
         tapBindingCode = addSpacingToKeyCode(tapBindingCode);
 
         if (binding.index === 0) {
-          bindingsConfig.push(`     &none            ${tapBindingCode}`);
+          bindingsConfig.push(`                 ${tapBindingCode}`);
         } else if (binding.index === 9 || binding.index === 19) {
           bindingsConfig.push(
-            ` ${tapBindingCode} &none \n              &none           `,
+            ` ${tapBindingCode}  \n                         `,
           );
         } else if (binding.index === 29) {
           bindingsConfig.push(
-            ` ${tapBindingCode} &none \n              &none           `,
+            ` ${tapBindingCode}  \n                         `,
           );
         } else if (binding.index === 39) {
-          bindingsConfig.push(` ${tapBindingCode} &none `);
+          bindingsConfig.push(` ${tapBindingCode}  `);
+        } else if (binding.index > 39) {
+          sensorBingindsConfig.push(` ${tapBindingCode}`);
         } else {
           bindingsConfig.push(` ${tapBindingCode}`);
         }
@@ -43,8 +46,8 @@ export const generateBlob = (layers) => {
       layerConfigs.push(`${layer.label}_layer {
             label = "${layer.label}";
             sensor-bindings = < 
-              &inc_dec_kp C_VOL_UP C_VOL_DN // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp C_VOL_UP C_VOL_DN // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp ${sensorBingindsConfig[2]} ${sensorBingindsConfig[3]} // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp ${sensorBingindsConfig[0]} ${sensorBingindsConfig[1]} // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
          ${bindingsConfig.join("")}
