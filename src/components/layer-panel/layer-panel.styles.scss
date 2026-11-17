@@ -162,6 +162,8 @@
       grid-area: b6;
       background-color: rgb(243, 203, 203);
       height: 45%;
+      position: relative;
+      top: 50%
     }
 
     // wheel button
@@ -169,8 +171,6 @@
       grid-area: b6;
       background-color: rgb(243, 203, 203);
       height: 45%;
-      position: relative;
-      top: 50%
     }
 
     .empty-item-4 {

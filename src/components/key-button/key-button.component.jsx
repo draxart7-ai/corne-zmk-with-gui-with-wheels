@@ -82,10 +82,10 @@ export const KeyButton = (props) => {
   };
 
   const isMouseWheel = index > 39
-  const isUpAction = index == 40
-  const isDownAction = index == 41
-  const isLeftAction = index == 42
-  const isRightAction = index == 43
+  const isDownAction = index == 40
+  const isUpAction = index == 41
+  const isRightAction = index == 42
+  const isLeftAction = index == 43
   console.log({ selectedBindingIndex, index })
   return (
     <>
