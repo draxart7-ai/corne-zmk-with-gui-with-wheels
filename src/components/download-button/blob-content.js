@@ -46,8 +46,8 @@ export const generateBlob = (layers) => {
       layerConfigs.push(`${layer.label}_layer {
             label = "${layer.label}";
             sensor-bindings = < 
-              &inc_dec_kp ${sensorBingindsConfig[2]} ${sensorBingindsConfig[3]} // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp ${sensorBingindsConfig[0]} ${sensorBingindsConfig[1]} // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp ${sensorBingindsConfig[2].replace("&kp", "")} ${sensorBingindsConfig[3].replace("&kp", "")} // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp ${sensorBingindsConfig[0].replace("&kp", "")} ${sensorBingindsConfig[1].replace("&kp", "")} // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
          ${bindingsConfig.join("")}
