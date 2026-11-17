@@ -323,6 +323,38 @@ export class Layer {
           modifiers: [],
         },
       },
+      {
+        index: 40,
+        label: "",
+        tap: {},
+        held: {
+          modifiers: [],
+        },
+      },
+      {
+        index: 41,
+        label: "",
+        tap: {},
+        held: {
+          modifiers: [],
+        },
+      },
+      {
+        index: 42,
+        label: "",
+        tap: {},
+        held: {
+          modifiers: [],
+        },
+      },
+      {
+        index: 43,
+        label: "",
+        tap: {},
+        held: {
+          modifiers: [],
+        },
+      },
     ];
   }
 }
