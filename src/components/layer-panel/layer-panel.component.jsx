@@ -12,6 +12,7 @@ import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import { DeleteLayerButton } from "../delete-layer-button/delete-layer-button.compnent";
 import { LayoutContext } from "../../providers/layout/layout.provider";
+import { WheelButton } from "../wheel-button/wheel-button.jsx";
 
 export const LayerPanel = (props) => {
   const { children, index, layer, ...other } = props;
@@ -89,11 +90,26 @@ export const LayerPanel = (props) => {
   }
 
   const wheels = () => {
-    let array = [];
-    for (let i = 0; i < 2; i++) {
-      array.push(<div className={`grid-item wheel wheel-item-${i + 1}`} key={`empty-${i}`}></div>);
-    }
-    return array;
+    return (
+      Object.keys(layer.sensorBindings).map((wheel, index) => {
+        console.log({ wheel, test: layer.sensorBindings[wheel] });
+        const button = <div className={`grid-item wheel wheel-item-${index + 1}`} key={wheel} >
+          <WheelButton keyData={layer.sensorBindings[wheel]} />
+        </div>
+        return button;
+      })
+    )
+    // let array = [];
+    // console.log({ layer, wheels: layer.sensorBindings });
+    // // layer.sensorBindings.map((wheel, index) => {
+    // //   console.log(`wheel-item-${index + 1}`);
+    // // })
+
+
+    // for (let i = 0; i < 2; i++) {
+    //   array.push(<div className={`grid-item wheel wheel-item-${i + 1}`} key={`empty-${i}`}></div>);
+    // }
+    // return array;
   }
 
   const handleOnChange = (e) => {

@@ -9,30 +9,152 @@
         {
           "index": 0,
           "label": "PC",
-          "sensor-bindings": {
-            "encoder-left-vertical": {
+          "sensorBindings": {
+            "encoderLeftVertical": {
+              "label": "TimeLine",
               "behavior": "",
               "actions": {
                 "up": {
-                  "label": "",
-                  "tap": {}
+                  "label": "UpA",
+                  "tap": {
+                    "id": 5217,
+                    "key_category_id": 61,
+                    "code": "R",
+                    "label": "R",
+                    "description": null,
+                    "created_at": "2021-12-28T09:52:59.175Z",
+                    "updated_at": "2022-12-16T10:18:29.999Z",
+                    "deleted": false,
+                    "modifiable": true,
+                    "shifted": false,
+                    "tap": true,
+                    "hold": true,
+                    "doubleTap": true,
+                    "tapHold": true,
+                    "searchLabel": null,
+                    "tag": null,
+                    "glyph": null,
+                    "jsCode": "KeyR",
+                    "url": null,
+                    "os": null,
+                    "geometry": null,
+                    "params": null,
+                    "models": null,
+                    "priority": null,
+                    "macro": true,
+                    "shape": null,
+                    "comboPickable": true,
+                    "comboTrigger": true,
+                    "modifiers": []
+                  }
                 },
                 "down": {
                   "label": "",
-                  "tap": {}
+                  "tap": {
+                    "id": 5202,
+                    "key_category_id": 61,
+                    "code": "E",
+                    "label": "E",
+                    "description": null,
+                    "created_at": "2021-12-28T09:52:59.049Z",
+                    "updated_at": "2022-12-16T10:18:29.870Z",
+                    "deleted": false,
+                    "modifiable": true,
+                    "shifted": false,
+                    "tap": true,
+                    "hold": true,
+                    "doubleTap": true,
+                    "tapHold": true,
+                    "searchLabel": null,
+                    "tag": null,
+                    "glyph": null,
+                    "jsCode": "KeyE",
+                    "url": null,
+                    "os": null,
+                    "geometry": null,
+                    "params": null,
+                    "models": null,
+                    "priority": null,
+                    "macro": true,
+                    "shape": null,
+                    "comboPickable": true,
+                    "comboTrigger": true,
+                    "modifiers": []
+                  }
                 }
               }
             },
-            "encoder-left-horizontal": {
+            "encoderLeftHorizontal": {
+              "label": "left-right",
               "behavior": "key-press",
               "actions": {
                 "left": {
-                  "label": "",
-                  "tap": {}
+                  "label": "lA",
+                  "tap": {
+                    "id": 5207,
+                    "key_category_id": 61,
+                    "code": "W",
+                    "label": "W",
+                    "description": null,
+                    "created_at": "2021-12-28T09:52:59.093Z",
+                    "updated_at": "2022-12-16T10:18:29.914Z",
+                    "deleted": false,
+                    "modifiable": true,
+                    "shifted": false,
+                    "tap": true,
+                    "hold": true,
+                    "doubleTap": true,
+                    "tapHold": true,
+                    "searchLabel": null,
+                    "tag": null,
+                    "glyph": null,
+                    "jsCode": "KeyW",
+                    "url": null,
+                    "os": null,
+                    "geometry": null,
+                    "params": null,
+                    "models": null,
+                    "priority": null,
+                    "macro": true,
+                    "shape": null,
+                    "comboPickable": true,
+                    "comboTrigger": true,
+                    "modifiers": []
+                  }
                 },
                 "right": {
-                  "label": "",
-                  "tap": {}
+                  "label": "Ra",
+                  "tap": {
+                    "id": 5218,
+                    "key_category_id": 61,
+                    "code": "Q",
+                    "label": "Q",
+                    "description": null,
+                    "created_at": "2021-12-28T09:52:59.183Z",
+                    "updated_at": "2022-12-16T10:18:30.014Z",
+                    "deleted": false,
+                    "modifiable": true,
+                    "shifted": false,
+                    "tap": true,
+                    "hold": true,
+                    "doubleTap": true,
+                    "tapHold": true,
+                    "searchLabel": null,
+                    "tag": null,
+                    "glyph": null,
+                    "jsCode": "KeyQ",
+                    "url": null,
+                    "os": null,
+                    "geometry": null,
+                    "params": null,
+                    "models": null,
+                    "priority": null,
+                    "macro": true,
+                    "shape": null,
+                    "comboPickable": true,
+                    "comboTrigger": true,
+                    "modifiers": []
+                  }
                 }
               }
             }
