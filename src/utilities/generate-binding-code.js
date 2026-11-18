@@ -128,7 +128,7 @@ export const generateSensorBindingCode = (binding) => {
 
   // if neither tap or held means none is keycode
   if (!binding.tap.label && !binding.held.label) {
-    return `NONE`;
+    return `NO_KEY`;
   }
   if (!code) {
     code = calculateLayerSwitchType(binding);
