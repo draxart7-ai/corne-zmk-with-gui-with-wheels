@@ -1,5 +1,8 @@
 import { addSpacingToKeyCode } from "../../utilities/data-parsing";
-import { generateBindingCode } from "../../utilities/generate-binding-code";
+import {
+  generateBindingCode,
+  generateSensorBindingCode,
+} from "../../utilities/generate-binding-code";
 
 export const generateBlob = (layers) => {
   const defaultConfigTop = `/*
@@ -38,7 +41,7 @@ export const generateBlob = (layers) => {
         } else if (binding.index === 39) {
           bindingsConfig.push(` ${tapBindingCode}  `);
         } else if (binding.index > 39) {
-          sensorBingindsConfig.push(` ${tapBindingCode}`);
+          sensorBingindsConfig.push(` ${generateSensorBindingCode(binding)}`);
         } else {
           bindingsConfig.push(` ${tapBindingCode}`);
         }
@@ -46,8 +49,8 @@ export const generateBlob = (layers) => {
       layerConfigs.push(`${layer.label}_layer {
             label = "${layer.label}";
             sensor-bindings = < 
-              &inc_dec_kp ${sensorBingindsConfig[2].replace(/&(?:\s*kp\b)?/g, "")} ${sensorBingindsConfig[3].replace(/&(?:\s*kp\b)?/g, "")} // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp ${sensorBingindsConfig[0].replace(/&(?:\s*kp\b)?/g, "")} ${sensorBingindsConfig[1].replace(/&(?:\s*kp\b)?/g, "")} // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp ${sensorBingindsConfig[2]} ${sensorBingindsConfig[3]} // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp ${sensorBingindsConfig[0]} ${sensorBingindsConfig[1]} // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
          ${bindingsConfig.join("")}

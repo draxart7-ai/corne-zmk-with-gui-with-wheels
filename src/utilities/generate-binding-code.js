@@ -58,7 +58,7 @@ const isHoldModifierTapAndHeldMods = ({ tap, held }) => {
   if (held.code === "mo") return; // is held layer toggle keycode
   return `&hm ${addModsToCode(held.code, held.modifiers)} ${addModsToCode(
     tap.code,
-    tap.modifiers
+    tap.modifiers,
   )}`;
 };
 
@@ -119,6 +119,43 @@ export const generateBindingCode = (binding) => {
   if (!code) {
     code = isBluetooth(binding);
   }
+
+  return code;
+};
+
+export const generateSensorBindingCode = (binding) => {
+  let code = null;
+
+  // if neither tap or held means none is keycode
+  if (!binding.tap.label && !binding.held.label) {
+    return `NONE`;
+  }
+  if (!code) {
+    code = calculateLayerSwitchType(binding);
+  }
+  if (!code) {
+    code = isKeyPressNoMods(binding);
+  }
+  if (!code) {
+    code = isKeyPressWithMods(binding);
+  }
+  if (!code) {
+    code = isHoldModifierBasic(binding);
+  }
+  if (!code) {
+    code = isHoldModifierTapMods(binding);
+  }
+  if (!code) {
+    code = isHoldModifierHeldMods(binding);
+  }
+  if (!code) {
+    code = isHoldModifierTapAndHeldMods(binding);
+  }
+  if (!code) {
+    code = isBluetooth(binding);
+  }
+
+  code = code.replace(/&(?:\s*kp\b)?/g, "");
 
   return code;
 };
