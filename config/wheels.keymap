@@ -37,9 +37,9 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        // Custom sensor behavior for mouse scrolling
+        // Custom sensor behavior for mouse scrolling (accepts 2 arguments)
         inc_dec_msc: inc_dec_msc {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
         };
