@@ -57,8 +57,8 @@
 Mac_layer {
             label = "Mac";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &lt Mac_VDesk Q  &hm LSHIFT W     &hm LALT E       &hm LGUI R       &kp T            &kp Y            &hm RGUI U       &hm RALT I       &hm RSHIFT O     &kp P             
@@ -71,8 +71,8 @@ Mac_layer {
 Numbers_layer {
             label = "Numbers";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &none            &none            &none            &none            &none            &kp N7           &kp N8           &kp N9           &kp EQUAL         
@@ -85,8 +85,8 @@ Numbers_layer {
 Sym_Left_layer {
             label = "Sym_Left";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &kp QMARK        &kp GRAVE        &kp DQT          &kp SINGLE_QUOTE &kp TILDE        &none            &none            &none            &none            &none             
@@ -99,8 +99,8 @@ Sym_Left_layer {
 Sym_Right_layer {
             label = "Sym_Right";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &none            &none            &none            &none            &kp COLON        &kp SEMICOLON    &kp AMPERSAND    &kp PIPE         &kp EQUAL         
@@ -113,8 +113,8 @@ Sym_Right_layer {
 Com_Switch_layer {
             label = "Com_Switch";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_CLR       &none            &none            &none            &none            &none             
@@ -127,8 +127,8 @@ Com_Switch_layer {
 Pc_util_layer {
             label = "Pc_util";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &kp LS(LG(S))    &kp LC(Z)        &kp LC(Y)        &kp LC(SLASH)    &none            &none            &none            &none            &none             
@@ -141,8 +141,8 @@ Pc_util_layer {
 Mac_util_layer {
             label = "Mac_util";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &kp LS(LG(KP_N4)) &kp LG(Z)        &kp LG(Y)        &kp LG(SLASH)    &none            &none            &none            &none            &none             
@@ -155,8 +155,8 @@ Mac_util_layer {
 PC_Nav_layer {
             label = "PC_Nav";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &kp HOME         &kp UP           &kp END          &none            &none            &none            &none            &none            &none             
@@ -169,8 +169,8 @@ PC_Nav_layer {
 Mac_Nav_layer {
             label = "Mac_Nav";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &kp HOME         &kp UP           &kp END          &none            &none            &none            &none            &none            &none             
@@ -183,8 +183,8 @@ Mac_Nav_layer {
 PC_VDesk_layer {
             label = "PC_VDesk";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &kp LCTRL        &kp LG(LEFT)     &kp LG(RIGHT)    &kp LG(TAB)      &none            &none            &none            &none            &none             
@@ -197,8 +197,8 @@ PC_VDesk_layer {
 Mac_VDesk_layer {
             label = "Mac_VDesk";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &kp LCTRL        &kp LEFT         &kp RIGHT        &kp LC(UP)       &none            &none            &none            &none            &none             
@@ -211,8 +211,8 @@ Mac_VDesk_layer {
 PC_App_layer {
             label = "PC_App";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &none            &none            &none            &none            &none            &none            &none            &none            &none             
@@ -225,8 +225,8 @@ PC_App_layer {
 Mac_App_layer {
             label = "Mac_App";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &none            &kp TILDE        &kp GRAVE        &kp W            &none            &none            &none            &none            &none             
@@ -239,8 +239,8 @@ Mac_App_layer {
 PC_Tabs_layer {
             label = "PC_Tabs";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &none            &kp LC(LS(PAGE_UP)) &kp LC(LS(PAGE_DOWN)) &none            &none            &none            &none            &none            &none             
@@ -253,8 +253,8 @@ PC_Tabs_layer {
 Mac_Tabs_layer {
             label = "Mac_Tabs";
             sensor-bindings = < 
-              &inc_dec_kp  NO_KEY  NO_KEY // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  NO_KEY  NO_KEY // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0   0  // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  0   0  // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &none            &none            &kp LS(LC(PAGE_UP)) &kp LS(LC(PAGE_DOWN)) &none            &none            &none            &none            &none            &none             
