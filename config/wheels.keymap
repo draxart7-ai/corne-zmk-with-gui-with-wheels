@@ -7,7 +7,7 @@
 #include <behaviors.dtsi> 
 #include <dt-bindings/zmk/keys.h> 
 #include <dt-bindings/zmk/bt.h> 
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define PC 0 
 #define Mac 1 
@@ -37,12 +37,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        // Custom sensor behavior for mouse scrolling (accepts 2 arguments)
-        inc_dec_msc: inc_dec_msc {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-        };
     };
     keymap {
     compatible = "zmk,keymap";
@@ -50,8 +44,8 @@
     PC_layer {
             label = "PC";
             sensor-bindings = < 
-              &inc_dec_msc  SCRL_RIGHT  SCRL_LEFT  // 1st: Targets left_horizonal_encoder
-              &inc_dec_msc  SCRL_DOWN   SCRL_UP    // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  R  L // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp  D  U // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &lt PC_VDesk Q   &hm LSHIFT W     &hm LALT E       &hm LCTRL R      &kp T            &kp Y            &hm RCTRL U      &hm RALT I       &hm RSHIFT O     &kp P             
@@ -65,7 +59,7 @@ Mac_layer {
             label = "Mac";
             sensor-bindings = < 
               &inc_dec_kp  0  0 // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  0  0 // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  PAGE_DOWN  PAGE_UP // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &lt Mac_VDesk Q  &hm LSHIFT W     &hm LALT E       &hm LGUI R       &kp T            &kp Y            &hm RGUI U       &hm RALT I       &hm RSHIFT O     &kp P             
