@@ -7,7 +7,6 @@
 #include <behaviors.dtsi> 
 #include <dt-bindings/zmk/keys.h> 
 #include <dt-bindings/zmk/bt.h> 
-#include <dt-bindings/zmk/pointing.h>
 
 #define PC 0 
 #define Mac 1 
@@ -25,6 +24,7 @@
 #define Mac_App 13 
 #define PC_Tabs 14 
 #define Mac_Tabs 15 
+#define Paint 16 
     
 / {
     behaviors {
@@ -44,14 +44,14 @@
     PC_layer {
             label = "PC";
             sensor-bindings = < 
-              &inc_dec_kp  R  L // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  D  U // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp   A   B // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp   PAGE_DOWN   PAGE_UP // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &lt PC_VDesk Q   &hm LSHIFT W     &hm LALT E       &hm LCTRL R      &kp T            &kp Y            &hm RCTRL U      &hm RALT I       &hm RSHIFT O     &kp P             
                           &lt PC_App A     &lt PC_Tabs S    &lt Numbers D    &lt Sym_Right F  &kp G            &kp H            &lt Sym_Left J   &kp K            &kp L            &mo PC_Nav        
                           &lt Pc_util Z    &kp X            &kp C            &kp V            &kp B            &kp N            &kp M            &none            &none            &mo Com_Switch    
-                          &kp LC(C)        &kp ENTER        &kp SPACE        &kp LSHIFT       &none            &none            &none            &none            &kp ESC          &none             
+                          &kp LC(C)        &kp ENTER        &kp SPACE        &kp LSHIFT       &to Paint        &none            &none            &none            &kp ESC          &none             
             >;
           };
             
@@ -59,7 +59,7 @@ Mac_layer {
             label = "Mac";
             sensor-bindings = < 
               &inc_dec_kp  0  0 // 1st: Targets left_horizonal_encoder
-              &inc_dec_kp  PAGE_DOWN  PAGE_UP // 2nd: Targets left_vertical_encoder
+              &inc_dec_kp  0  0 // 2nd: Targets left_vertical_encoder
               >;
             bindings = <
                           &lt Mac_VDesk Q  &hm LSHIFT W     &hm LALT E       &hm LGUI R       &kp T            &kp Y            &hm RGUI U       &hm RALT I       &hm RSHIFT O     &kp P             
@@ -92,7 +92,7 @@ Sym_Left_layer {
             bindings = <
                           &kp QMARK        &kp GRAVE        &kp DQT          &kp SINGLE_QUOTE &kp TILDE        &none            &none            &none            &none            &none             
                           &kp EXCL         &kp AT           &kp HASH         &kp DOLLAR       &kp PERCENT      &none            &none            &none            &none            &none             
-                          &kp BACKSLASH    &kp SLASH        &kp ASTRK        &kp MINUS        &kp PLUS         &none            &none            &none            &none            &none             
+                          &kp BACKSLASH    &kp SLASH        &kp ASTRK        &kp MINUS        &kp KP_PLUS      &none            &none            &none            &none            &none             
                           &none            &none            &kp UNDERSCORE   &none            &none            &none            &none            &none            &none            &none             
             >;
           };
@@ -262,6 +262,20 @@ Mac_Tabs_layer {
                           &none            &none            &kp LA(LG(LEFT)) &kp LA(LG(RIGHT)) &kp LS(LG(T))    &none            &none            &none            &none            &none             
                           &none            &none            &kp LG(W)        &kp LG(T)        &none            &none            &none            &none            &none            &none             
                           &none            &none            &none            &none            &none            &none            &none            &none            &none            &none             
+            >;
+          };
+            
+Paint_layer {
+            label = "Paint";
+            sensor-bindings = < 
+              &inc_dec_kp    RBKT   LBKT // 1st: Targets left_horizonal_encoder
+              &inc_dec_kp   LC(MINUS)   LC(KP_PLUS) // 2nd: Targets left_vertical_encoder
+              >;
+            bindings = <
+                          &kp LC(C)        &kp LC(V)        &kp LS(LC(B))    &kp T            &kp LC(T)        &none            &none            &none            &none            &none             
+                          &kp LS(LC(L))    &kp LC(E)        &kp BACKSPACE    &kp P            &kp E            &none            &none            &none            &none            &none             
+                          &kp N2           &kp LC(Z)        &kp LS(LC(Z))    &kp B            &kp F            &none            &none            &none            &none            &none             
+                          &kp LC(S)        &kp ENTER        &kp LALT         &kp LSHIFT       &to PC           &none            &none            &none            &none            &none             
             >;
           };
             
